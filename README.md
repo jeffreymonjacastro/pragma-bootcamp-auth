@@ -1,4 +1,6 @@
-# Proyecto Base Implementando Clean Architecture
+# Authentication Microservice for Pragma Bootcamp
+
+Proyecto Base Implementando Clean Architecture
 
 ## Antes de Iniciar
 
@@ -46,3 +48,21 @@ Este módulo es el más externo de la arquitectura, es el encargado de ensamblar
 
 **Los beans de los casos de uso se disponibilizan automaticamente gracias a un '@ComponentScan' ubicado en esta capa.**
 
+## Getting Started
+
+```bash
+nvim build.gradle
+
+plugins {
+    id 'co.com.bancolombia.cleanArchitecture' version '3.24.0'
+}
+
+gradle tasks
+
+gradle cleanArchitecture --package=co.com.pragma --type=reactive --name=Authentication --lombok=true
+
+gradle generateModel --name=User
+gradle generateUseCase --name=User
+gradle generateDrivenAdapter --type=r2dbc
+gradle generateEntryPoint --type=webflux
+```
